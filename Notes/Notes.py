@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class Notes:
+class Notes(object):
         def __init__(self, id_int = abs(int()), head_n = '', body_n = '', date_n = str(datetime.now().strftime("%d.%m.%Y-%H:%M:%S"))):
             self.id_int = id_int
             self.head_n = head_n

@@ -3,6 +3,12 @@ from datetime import datetime
 
 #  Элементарные методы
 class Function(object):
+    def salute(self):
+        print('Приложение - Заметки')
+        print("\n1 - создать\n2 - читать\n3 - читать по ID\n4 - редоктировать\n5 "
+              "- удалить всё\n6 - удалить по ID\n7 - выход\nВведите номер операции")
+
+    # Приветствие
     def input_notes(self):
         id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
         id_str = str(id_int)
@@ -49,7 +55,7 @@ class Function(object):
             print(array1)
             return array1
 
-    # Вывести всё что находится до ";" в каждой строке
+    # Вывести всё что находится до первой ";" в каждой строке , то есть ID всех строк
     def error_notes(self):
         print('No Comand !!!')
 

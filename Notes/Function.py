@@ -12,10 +12,8 @@ class Function(object):
     def input_notes(self, array):
         try:
             array = self.view_id()
-            print(array)
             id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
             for i in array:
-                # print(i)
                 while i == str(id_int):
                     print("id уже существует !!!")
                     id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
@@ -24,7 +22,6 @@ class Function(object):
             body_n = input('Введите текст заметки ->  ')
             date_n = str(datetime.now().strftime("%d.%m.%Y-%H:%M:%S"))
             notes = (id_str + ';' + head_n + ';' + body_n + ';' + date_n + '\n')
-            # print(notes)
             with open('data.csv', 'a', encoding='utf_8') as file:
                 file.write(notes)
             return notes
@@ -34,7 +31,6 @@ class Function(object):
 
     # Ввод данных
     # def save_notes(self, note='00;TEST;test;00.00.00\n'):
-    # def save_notes(self, notes):
     #     with open('data.csv', 'a', encoding='utf_8') as file:
     #         file.write(notes)
 

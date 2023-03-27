@@ -16,13 +16,13 @@ class Menu(object):
         elif comand == '2':
             f.reads_notes(), self.menu()
         elif comand == '3':
-            mo.read_id_notes(self)
+            mo.read_id_notes(self), self.menu()
         elif comand == '4':
             mo.edit(self)
         elif comand == '5':
             f.deletes(), f.reads_notes(), self.menu()
         elif comand == '6':
-            mo.delete_id_notes(self)
+            mo.delete_id_notes(self), self.menu()
         elif comand == '7':
             f.exit()
         else:

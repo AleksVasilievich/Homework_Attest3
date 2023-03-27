@@ -4,16 +4,16 @@ from Mode import Mode
 class Main(object):
     if __name__ == '__main__':
 
-        f = Function()
+        # f = Function()
         me = Menu()
-        mo = Mode()
+        # mo = Mode()
         me.menu()
 
         # f.input_notes()
         # f.save_notes()
-        f.reads_notes()
+        # f.reads_notes()
         # f.deletes()
         # f.reads_notes()
-        f.view_id()
+        # f.view_id()
 
 

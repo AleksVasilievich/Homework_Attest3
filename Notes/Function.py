@@ -5,24 +5,37 @@ from datetime import datetime
 class Function(object):
     def salute(self):
         print('Приложение - Заметки')
-        print("\n1 - создать\n2 - читать\n3 - читать по ID\n4 - редоктировать\n5 "
+        print("\n1 - создать введённые данные\n2 - читать\n3 - читать по ID\n4 - редоктировать\n5 "
               "- удалить всё\n6 - удалить по ID\n7 - выход\nВведите номер операции")
 
     # Приветствие
-    def input_notes(self):
-        id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
-        id_str = str(id_int)
-        head_n = input('Введите заголовок ->  ')
-        body_n = input('Введите текст заметки ->  ')
-        date_n = str(datetime.now().strftime("%d.%m.%Y-%H:%M:%S"))
-        notes = (id_str + ';' + head_n + ';' + body_n + ';' + date_n + '\n')
-        print(notes)
-        return notes
+    def input_notes(self, array):
+        try:
+            array = self.view_id()
+            print(array)
+            id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
+            for i in array:
+                print(i)
+                while i == str(id_int):
+                    print("id уже существует !!!")
+                    id_int = abs(int(input('Введите натуральное число, новый id ->  ')))
+            id_str = str(id_int)
+            head_n = input('Введите заголовок ->  ')
+            body_n = input('Введите текст заметки ->  ')
+            date_n = str(datetime.now().strftime("%d.%m.%Y-%H:%M:%S"))
+            notes = (id_str + ';' + head_n + ';' + body_n + ';' + date_n + '\n')
+            print(notes)
+            with open('data.csv', 'a', encoding='utf_8') as file:
+                file.write(notes)
+            return notes
+        except Exception:
+            self.error_notes()
+
 
     # Ввод данных
-    def save_notes(self, note='00;TEST;test;00.00.00\n'):
-        with open('data.csv', 'a', encoding='utf_8') as file:
-            file.write(note)
+    # def save_notes(self, note='00;TEST;test;00.00.00\n'):
+    #     with open('data.csv', 'a', encoding='utf_8') as file:
+    #         file.write(notes)
 
     # Сохранить данных
 

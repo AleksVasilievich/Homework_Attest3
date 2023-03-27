@@ -8,6 +8,7 @@ class Notes(object):
             self.body_n =body_n
             self.date_n = date_n
 
+
         def get_id(self):
             return self.id_int
 

@@ -41,8 +41,8 @@ class Mode(object):
         f = Function()
         print('Удалим редактируемую заметку и напишем новую ')
         Mode.delete_id_notes(self)
+        print('Пишем новую')
         f.input_notes(self)
         return
 
 # Редактируем файл
-

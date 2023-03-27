@@ -18,7 +18,7 @@ class Menu(object):
         elif comand == '3':
             mo.read_id_notes(self), self.menu()
         elif comand == '4':
-            mo.edit(self)
+            mo.edit(self), self.menu()
         elif comand == '5':
             f.deletes(), f.reads_notes(), self.menu()
         elif comand == '6':

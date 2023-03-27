@@ -29,18 +29,25 @@ class Function(object):
             self.error_notes()
 
 
-    # Ввод данных
+    #Ввод данных
     # def save_notes(self, note='00;TEST;test;00.00.00\n'):
     #     with open('data.csv', 'a', encoding='utf_8') as file:
-    #         file.write(notes)
+    #         file.write(note)
 
-    # Сохранить данных
+    #Сохранить данных
 
     def reads_notes(self):
         with open('data.csv', 'r', encoding='utf_8') as file:
-            return print(file.read())
+            array = file.read()
+            print(array)
+            return array
+    # def reads_notes(self):
+    #     with open('data.csv', 'r', encoding='utf_8') as file:
+    #         return print(file.read())
 
     # Чтение из файла
+
+
 
     def deletes(self):
         with open('data.csv', 'w', encoding='utf_8') as file:

@@ -18,7 +18,6 @@ class Mode(object):
             return [array1, temp_id]
         except Exception:
             f.error_notes()
-        print('read_id')
 
     # Читаем строку файла по id
     def delete_id_notes(self):
@@ -26,7 +25,6 @@ class Mode(object):
 
         try:
             array1 = Mode.read_id_notes(self)[0]
-            print(array1)
             print('Подтвердите свой выбор !!!')
             temp_array = Mode.read_id_notes(self)[1]
             array = array1[0:temp_array] + array1[(temp_array + 1):]
@@ -40,5 +38,11 @@ class Mode(object):
 
     # Удоляем строку файла по id
     def edit(self):
-        print('edit')
+        f = Function()
+        print('Удалим редактируемую заметку и напишем новую ')
+        Mode.delete_id_notes(self)
+        f.input_notes(self)
+        return
+
 # Редактируем файл
+
